@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kecerdasan Bangsa dan Negara — Membangun SDM Unggul</title>
+<meta name="description" content="Materi interaktif Kecerdasan Bangsa dan Negara: pengertian, bentuk kecerdasan (IQ, EQ, SQ, PQ), wujud perilaku sehari-hari, indikator bangsa cerdas (IPM), dan kuis evaluasi.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f5f7fb;
+    --surface:#ffffff;
+    --ink:#101a2e;
+    --muted:#5b6577;
+    --line:#e5eaf3;
+    --navy:#101c38;
+    --navy-2:#0b1430;
+    --red:#e02b47;
+    --red-dark:#b81f3a;
+    --gold:#f5a524;
+    --teal:#0ea5a4;
+    --blue:#3b6fe0;
+    --violet:#7c5cf0;
+    --green:#10b981;
+    --radius:20px;
+    --shadow:0 14px 40px rgba(16,28,56,.09);
+    --shadow-sm:0 6px 18px rgba(16,28,56,.07);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:92px}
+  body{
+    font-family:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+    background:var(--bg);color:var(--ink);line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block}
+  a{text-decoration:none;color:inherit}
+  ul{list-style:none}
+  button{font-family:inherit}
+  .container{width:min(1140px,92%);margin-inline:auto}
+  .skip{position:absolute;left:-999px;top:8px;background:#fff;padding:10px 16px;border-radius:10px;z-index:200}
+  .skip:focus{left:12px}
+
+  /* ============ NAVBAR ============ */
+  nav{
+    position:fixed;inset:0 0 auto 0;z-index:100;height:72px;
+    background:rgba(255,255,255,.82);backdrop-filter:blur(14px);
+    border-bottom:1px solid transparent;transition:.3s;
+  }
+  nav.scrolled{border-bottom-color:var(--line);box-shadow:0 6px 24px rgba(16,28,56,.06)}
+  .nav-inner{width:min(1140px,94%);margin-inline:auto;height:100%;display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .brand{display:flex;align-items:center;gap:12px}
+  .brand-logo{width:44px;height:44px;border-radius:13px;background:linear-gradient(135deg,var(--red),var(--gold));display:grid;place-items:center;color:#fff;flex-shrink:0;box-shadow:0 6px 16px rgba(224,43,71,.35)}
+  .brand-text{font-size:13px;line-height:1.25;color:var(--muted);font-weight:600}
+  .brand-text b{display:block;color:var(--ink);font-size:15px;font-weight:800}
+  .nav-menu{display:flex;align-items:center;gap:6px}
+  .nav-menu a{font-size:14.5px;font-weight:600;color:var(--muted);padding:9px 14px;border-radius:10px;transition:.25s}
+  .nav-menu a:hover{color:var(--ink);background:#eef2f9}
+  .nav-menu a.active{color:var(--red);background:#fdeef1}
+  .nav-menu a.btn-nav{background:var(--red);color:#fff;border-radius:12px;box-shadow:0 6px 16px rgba(224,43,71,.3)}
+  .nav-menu a.btn-nav:hover{background:var(--red-dark);color:#fff}
+  .nav-toggle{display:none;width:44px;height:44px;border:1px solid var(--line);background:#fff;border-radius:12px;cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px}
+  .nav-toggle span{width:20px;height:2px;background:var(--ink);border-radius:2px;transition:.3s}
+
+  /* ============ HERO ============ */
+  .hero{
+    position:relative;overflow:hidden;
+    background:radial-gradient(1100px 600px at 85% -10%,#1c2f5e 0%,transparent 55%),
+               radial-gradient(800px 500px at -10% 110%,#23204f 0%,transparent 50%),
+               linear-gradient(160deg,#0b1430 0%,#101c38 60%,#122043 100%);
+    color:#fff;padding:150px 0 110px;
+  }
+  .hero-blob{position:absolute;border-radius:50%;filter:blur(70px);opacity:.5;pointer-events:none}
+  .b1{width:420px;height:420px;background:rgba(224,43,71,.35);top:-120px;right:-80px}
+  .b2{width:360px;height:360px;background:rgba(245,165,36,.22);bottom:-140px;left:-60px}
+  .hero-grid{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+  .badge{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;letter-spacing:.4px;
+    background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);color:#ffd9a1;
+    padding:8px 16px;border-radius:999px;margin-bottom:22px}
+  .badge svg{width:15px;height:15px}
+  .hero h1{font-size:clamp(36px,5.2vw,58px);line-height:1.12;font-weight:800;letter-spacing:-.5px;margin-bottom:20px}
+  .grad{background:linear-gradient(92deg,#ff9aa8,#e02b47);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .grad2{background:linear-gradient(92deg,#ffd98a,#f5a524);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .lead{font-size:clamp(15.5px,1.6vw,18px);color:#c3cbe0;max-width:560px;margin-bottom:32px}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px}
+  .btn{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:15px;padding:15px 28px;border-radius:14px;transition:.25s;cursor:pointer;border:none}
+  .btn svg{width:18px;height:18px;transition:.25s}
+  .btn-primary{background:linear-gradient(92deg,var(--red),#f0536b);color:#fff;box-shadow:0 12px 28px rgba(224,43,71,.4)}
+  .btn-primary:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(224,43,71,.5)}
+  .btn-primary:hover svg{transform:translateX(4px)}
+  .btn-ghost{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.25)}
+  .btn-ghost:hover{background:rgba(255,255,255,.16);transform:translateY(-3px)}
+  .hero-stats{display:flex;gap:34px;flex-wrap:wrap}
+  .hero-stats li{display:flex;flex-direction:column}
+  .hero-stats b{font-size:clamp(24px,2.6vw,32px);font-weight:800;color:#fff}
+  .hero-stats b em{font-style:normal;color:var(--gold)}
+  .hero-stats span{font-size:13px;color:#9aa6c4;font-weight:600}
+  .hero-stats li:not(:last-child){border-right:1px solid rgba(255,255,255,.15);padding-right:34px}
+
+  /* hero visual */
+  .hero-visual{position:relative;height:440px}
+  .core{
+    position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+    width:180px;height:180px;border-radius:50%;
+    background:linear-gradient(140deg,var(--red),var(--red-dark));
+    display:grid;place-items:center;text-align:center;
+    box-shadow:0 0 0 14px rgba(224,43,71,.12),0 0 0 28px rgba(224,43,71,.06),0 24px 60px rgba(0,0,0,.35);
+    z-index:2;
+  }
+  .core b{display:block;font-size:20px;font-weight:800}
+  .core span{font-size:11.5px;color:#ffd9a1;font-weight:600;letter-spacing:.6px}
+  .fcard{
+    position:absolute;width:172px;padding:16px 18px;border-radius:18px;
+    background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);
+    backdrop-filter:blur(8px);display:flex;align-items:center;gap:12px;
+    animation:float 5s ease-in-out infinite;box-shadow:0 18px 40px rgba(0,0,0,.28);
+  }
+  .fcard .fc-ic{width:44px;height:44px;border-radius:13px;display:grid;place-items:center;flex-shrink:0}
+  .fc-ic svg{width:22px;height:22px}
+  .fcard b{display:block;font-size:16px;font-weight:800;line-height:1.2}
+  .fcard span{font-size:12px;color:#b6c0da;font-weight:600}
+  .fc-iq{top:16px;left:6px}
+  .fc-iq .fc-ic{background:linear-gradient(135deg,#3b6fe0,#6d9bff)}
+  .fc-eq{top:50%;right:-6px;transform:translateY(-50%);animation-delay:1.2s}
+  .fc-eq .fc-ic{background:linear-gradient(135deg,#e02b47,#f5708a)}
+  .fc-sq{bottom:14px;left:26px;animation-delay:2.2s}
+  .fc-sq .fc-ic{background:linear-gradient(135deg,#f5a524,#ffd166)}
+  @keyframes float{0%,100%{margin-top:0}50%{margin-top:-14px}}
+
+  /* ============ SECTION SHELL ============ */
+  .section{padding:100px 0}
+  .section.alt{background:linear-gradient(180deg,#eef2f9 0%,#f5f7fb 100%)}
+  .sec-head{text-align:center;max-width:760px;margin:0 auto 54px}
+  .kicker{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:var(--red);margin-bottom:14px}
+  .kicker::before,.kicker::after{content:"";width:26px;height:2px;background:linear-gradient(90deg,transparent,var(--red));border-radius:2px}
+  .kicker::after{background:linear-gradient(90deg,var(--red),transparent)}
+  .sec-head h2{font-size:clamp(26px,3.4vw,38px);font-weight:800;letter-spacing:-.4px;line-height:1.25;margin-bottom:14px}
+  .sec-sub{color:var(--muted);font-size:16.5px}
+
+  /* reveal on scroll */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+  .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
+
+  /* ============ PENGERTIAN ============ */
+  .def-box{
+    position:relative;background:linear-gradient(120deg,#101c38,#1a2c55);color:#fff;
+    border-radius:26px;padding:44px 48px 44px 108px;margin-bottom:40px;overflow:hidden;
+    box-shadow:0 20px 50px rgba(16,28,56,.25);
+  }
+  .def-box::after{content:"";position:absolute;right:-70px;top:-70px;width:230px;height:230px;border-radius:50%;background:rgba(224,43,71,.25);filter:blur(50px)}
+  .def-box .q-ic{position:absolute;left:34px;top:38px;width:52px;height:52px;border-radius:16px;background:rgba(255,255,255,.12);display:grid;place-items:center}
+  .def-box .q-ic svg{width:26px;height:26px;color:var(--gold)}
+  .def-box p{font-size:clamp(16px,1.8vw,19px);line-height:1.75;font-weight:500}
+  .def-box p b{color:#ffd98a}
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:30px 28px;box-shadow:var(--shadow-sm);transition:.3s}
+  .card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+  .card h3{font-size:19px;font-weight:800;margin:18px 0 10px}
+  .card p{font-size:15px;color:var(--muted)}
+  .chip-ic{width:54px;height:54px;border-radius:16px;display:grid;place-items:center;color:#fff;box-shadow:0 8px 18px rgba(16,28,56,.18)}
+  .chip-ic svg{width:26px;height:26px}
+  .ic-blue{background:linear-gradient(135deg,#3b6fe0,#6d9bff)}
+  .ic-red{background:linear-gradient(135deg,#e02b47,#f5708a)}
+  .ic-teal{background:linear-gradient(135deg,#0ea5a4,#3ddbc9)}
+  .ic-gold{background:linear-gradient(135deg,#f5a524,#ffd166)}
+  .ic-violet{background:linear-gradient(135deg,#7c5cf0,#a58bff)}
+  .quote{margin-top:44px;text-align:center;max-width:720px;margin-inline:auto}
+  .quote blockquote{font-size:clamp(18px,2.2vw,23px);font-weight:700;line-height:1.6;font-style:italic}
+  .quote blockquote::before{content:"“";color:var(--red);font-size:44px;line-height:0;vertical-align:-10px;margin-right:4px}
+  .quote figcaption{margin-top:12px;color:var(--muted);font-weight:600;font-size:14.5px}
+
+  /* ============ TABS BENTUK KECERDASAN ============ */
+  .tabs{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-bottom:34px}
+  .tab{
+    display:inline-flex;align-items:center;gap:10px;padding:13px 24px;border-radius:999px;
+    border:1.5px solid #d8dfec;background:#fff;font-weight:800;font-size:15px;color:var(--muted);
+    cursor:pointer;transition:.25s;box-shadow:var(--shadow-sm);
+  }
+  .tab .dot{width:10px;height:10px;border-radius:50%;background:currentColor;opacity:.35}
+  .tab:hover{transform:translateY(-2px);color:var(--ink)}
+  .tab.active{background:var(--navy);border-color:var(--navy);color:#fff;box-shadow:0 12px 26px rgba(16,28,56,.25)}
+  .tab.active .dot{opacity:1}
+  .tab[data-tab="iq"].active{background:linear-gradient(92deg,#2c55c0,#3b6fe0);border-color:transparent}
+  .tab[data-tab="eq"].active{background:linear-gradient(92deg,#c31e3b,#e02b47);border-color:transparent}
+  .tab[data-tab="sq"].active{background:linear-gradient(92deg,#d98c0d,#f5a524);border-color:transparent}
+  .tab[data-tab="pq"].active{background:linear-gradient(92deg,#5a3fd1,#7c5cf0);border-color:transparent}
+  .panel{display:none}
+  .panel.active{display:grid;grid-template-columns:1.05fr .95fr;gap:26px;animation:fadeUp .5s ease}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+  .panel-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:36px;box-shadow:var(--shadow-sm)}
+  .panel-head{display:flex;align-items:center;gap:16px;margin-bottom:18px}
+  .panel-head .chip-ic{width:56px;height:56px}
+  .panel-head h3{font-size:21px;font-weight:800;line-height:1.3}
+  .panel-head span{font-size:13px;font-weight:700;color:var(--muted);letter-spacing:.5px}
+  .panel-card p.desc{font-size:15.5px;color:#3d465a;margin-bottom:18px}
+  .mini-note{background:#fff8ec;border:1px dashed #f0c26a;border-radius:14px;padding:14px 18px;font-size:14px;color:#7a5a17;font-weight:600}
+  .panel-side h4{font-size:14px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+  .check-list li{display:flex;gap:12px;align-items:flex-start;padding:9px 0;font-size:15px;font-weight:600;border-bottom:1px dashed #e8ecf5}
+  .check-list li:last-child{border-bottom:none}
+  .check-list svg{width:21px;height:21px;flex-shrink:0;margin-top:2px}
+  .ck-blue{color:var(--blue)}.ck-red{color:var(--red)}.ck-gold{color:var(--gold)}.ck-violet{color:var(--violet)}
+  .chips-wrap{margin-top:20px}
+  .chips-wrap h4{font-size:14px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+  .chipset{display:flex;flex-wrap:wrap;gap:9px}
+  .chip{padding:8px 15px;border-radius:999px;background:#f1f4fa;font-size:13.5px;font-weight:700;color:#33405c;border:1px solid #e3e8f2}
+  .balance{
+    margin-top:46px;background:#fff;border:1px solid var(--line);border-radius:24px;padding:34px 40px;
+    box-shadow:var(--shadow-sm);display:flex;align-items:center;gap:26px;flex-wrap:wrap;
+  }
+  .balance .bal-ic{width:58px;height:58px;border-radius:18px;background:linear-gradient(135deg,var(--red),var(--gold));display:grid;place-items:center;color:#fff;flex-shrink:0}
+  .balance .bal-ic svg{width:28px;height:28px}
+  .balance h3{font-size:18px;font-weight:800;margin-bottom:4px}
+  .balance p{font-size:14.5px;color:var(--muted)}
+  .bal-bar{flex:1;min-width:260px}
+  .bal-track{display:flex;height:16px;border-radius:999px;overflow:hidden;margin-bottom:10px;box-shadow:inset 0 2px 6px rgba(0,0,0,.08)}
+  .bal-track i{height:100%}
+  .seg-iq{width:30%;background:linear-gradient(90deg,#3b6fe0,#6d9bff)}
+  .seg-eq{width:28%;background:linear-gradient(90deg,#e02b47,#f5708a)}
+  .seg-sq{width:26%;background:linear-gradient(90deg,#f5a524,#ffd166)}
+  .seg-pq{width:16%;background:linear-gradient(90deg,#7c5cf0,#a58bff)}
+  .bal-labels{display:flex;justify-content:space-between;font-size:12.5px;font-weight:800;color:var(--muted)}
+
+  /* ============ PERILAKU ============ */
+  .place-card{background:#fff;border-radius:22px;border:1px solid var(--line);overflow:hidden;box-shadow:var(--shadow-sm);transition:.3s;display:flex;flex-direction:column}
+  .place-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+  .place-top{padding:22px 24px;display:flex;align-items:center;gap:13px;color:#fff}
+  .place-top .chip-ic{width:46px;height:46px;border-radius:13px;background:rgba(255,255,255,.2);box-shadow:none}
+  .place-top .chip-ic svg{width:23px;height:23px}
+  .place-top h3{font-size:16.5px;font-weight:800;line-height:1.3}
+  .pt-blue{background:linear-gradient(120deg,#2c55c0,#5b8bef)}
+  .pt-red{background:linear-gradient(120deg,#c31e3b,#ef5a74)}
+  .pt-teal{background:linear-gradient(120deg,#0b8b8a,#23b5ae)}
+  .pt-gold{background:linear-gradient(120deg,#d98c0d,#f7b733)}
+  .place-card ul{padding:20px 24px 24px;display:flex;flex-direction:column;gap:11px}
+  .place-card li{display:flex;gap:10px;font-size:14.5px;font-weight:600;color:#39435a}
+  .place-card li svg{width:19px;height:19px;flex-shrink:0;color:var(--green);margin-top:2px}
+
+  /* ============ INDIKATOR ============ */
+  .dim-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-bottom:30px}
+  .dim-card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:28px;box-shadow:var(--shadow-sm)}
+  .dim-card h3{font-size:17px;font-weight:800;margin:16px 0 8px}
+  .dim-card p{font-size:14.5px;color:var(--muted)}
+  .dim-tag{display:inline-block;margin-top:14px;font-size:12.5px;font-weight:800;padding:6px 13px;border-radius:999px;letter-spacing:.3px}
+  .tag-blue{background:#eaf0fd;color:#2c55c0}
+  .tag-red{background:#fdeef1;color:#c31e3b}
+  .tag-gold{background:#fff4dd;color:#a86a06}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin:40px 0 36px}
+  .stat{background:#fff;border:1px solid var(--line);border-radius:22px;padding:30px 18px;text-align:center;box-shadow:var(--shadow-sm);position:relative;overflow:hidden;transition:.3s}
+  .stat:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+  .stat::before{content:"";position:absolute;top:0;left:20%;right:20%;height:4px;border-radius:0 0 8px 8px;background:var(--sc,var(--red))}
+  .stat b{display:block;font-size:clamp(30px,3.4vw,42px);font-weight:800;letter-spacing:-1px;line-height:1.15}
+  .stat .u{font-size:14px;font-weight:700;color:var(--muted)}
+  .stat span{font-size:13px;font-weight:700;color:var(--muted);display:block;margin-top:6px}
+  .stat-note{text-align:center;font-size:13px;color:#8a93a8;margin-bottom:18px}
+  .scale-wrap{background:#fff;border:1px solid var(--line);border-radius:22px;padding:30px 34px;box-shadow:var(--shadow-sm)}
+  .scale-head{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:20px}
+  .scale-head h3{font-size:17px;font-weight:800}
+  .scale-head span{font-size:13.5px;color:var(--muted);font-weight:600}
+  .scale{position:relative;height:16px;border-radius:999px;overflow:visible;background:linear-gradient(90deg,#f87171 0 25%,#fbbf24 25% 50%,#34d399 50% 75%,#0ea371 75% 100%);box-shadow:inset 0 2px 6px rgba(0,0,0,.12)}
+  .scale .marker{position:absolute;top:50%;left:71%;transform:translate(-50%,-50%);width:26px;height:26px;background:#fff;border:4px solid var(--navy);border-radius:50%;box-shadow:0 4px 12px rgba(0,0,0,.25)}
+  .marker-tip{position:absolute;top:-38px;left:71%;transform:translateX(-50%);background:var(--navy);color:#fff;font-size:12px;font-weight:800;padding:6px 12px;border-radius:9px;white-space:nowrap}
+  .marker-tip::after{content:"";position:absolute;left:50%;bottom:-5px;transform:translateX(-50%);border:5px solid transparent;border-top-color:var(--navy);border-bottom:none}
+  .scale-labels{display:flex;justify-content:space-between;margin-top:14px;font-size:13px;font-weight:800;color:var(--muted)}
+
+  /* ============ KUIS ============ */
+  .quiz-card{max-width:780px;margin-inline:auto;background:#fff;border:1px solid var(--line);border-radius:26px;padding:40px 44px;box-shadow:var(--shadow)}
+  .q-meta{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-bottom:16px;flex-wrap:wrap}
+  .q-count{font-size:14px;font-weight:800;color:var(--muted);letter-spacing:.4px}
+  .q-score{font-size:13.5px;font-weight:800;color:#0b7a5c;background:#e7f8f1;padding:7px 14px;border-radius:999px}
+  .q-progress{height:9px;border-radius:999px;background:#edf0f7;overflow:hidden;margin-bottom:30px}
+  .q-progress i{display:block;height:100%;width:0;border-radius:999px;background:linear-gradient(90deg,var(--red),var(--gold));transition:width .5s ease}
+  .q-text{font-size:clamp(17px,2vw,20px);font-weight:800;line-height:1.55;margin-bottom:24px}
+  .opts{display:grid;gap:12px}
+  .opt{
+    text-align:left;padding:16px 20px;border-radius:15px;border:1.5px solid #e2e7f2;background:#fafbfe;
+    font-size:15.5px;font-weight:700;color:#2c3450;cursor:pointer;transition:.2s;display:flex;gap:13px;align-items:center;
+  }
+  .opt .key{width:30px;height:30px;border-radius:9px;background:#eceff7;color:#5a6478;display:grid;place-items:center;font-size:13px;font-weight:800;flex-shrink:0;transition:.2s}
+  .opt:hover:not(:disabled){border-color:var(--blue);background:#f4f7ff;transform:translateX(4px)}
+  .opt:hover:not(:disabled) .key{background:var(--blue);color:#fff}
+  .opt:disabled{cursor:default}
+  .opt.correct{border-color:var(--green);background:#effcf6;color:#0b7a5c}
+  .opt.correct .key{background:var(--green);color:#fff}
+  .opt.wrong{border-color:#ef4444;background:#fef3f2;color:#b91c1c}
+  .opt.wrong .key{background:#ef4444;color:#fff}
+  .why-box{margin-top:20px;background:#f0f4ff;border-left:4px solid var(--blue);padding:15px 19px;border-radius:13px;font-size:14.5px;color:#2c3450;font-weight:600;display:none;animation:fadeUp .4s ease}
+  .why-box.show{display:block}
+  .q-actions{margin-top:24px;display:flex;justify-content:flex-end}
+  .btn-next{background:var(--navy);color:#fff;padding:13px 30px;border-radius:13px;font-weight:800;font-size:15px;border:none;cursor:pointer;display:none;align-items:center;gap:9px;transition:.25s}
+  .btn-next.show{display:inline-flex}
+  .btn-next:hover{background:#1a2c55;transform:translateY(-2px)}
+  .btn-next svg{width:17px;height:17px}
+  .result{text-align:center;display:none;animation:fadeUp .5s ease}
+  .result.show{display:block}
+  .score-ring{width:150px;height:150px;border-radius:50%;margin:6px auto 22px;display:grid;place-items:center;position:relative}
+  .score-ring::before{content:"";position:absolute;inset:12px;background:#fff;border-radius:50%}
+  .score-ring b{position:relative;font-size:38px;font-weight:800}
+  .score-ring b small{font-size:16px;color:var(--muted);font-weight:700}
+  .result h3{font-size:24px;font-weight:800;margin-bottom:10px}
+  .result p{color:var(--muted);font-size:15.5px;max-width:460px;margin:0 auto 26px}
+  .btn-retry{background:linear-gradient(92deg,var(--red),#f0536b);color:#fff;padding:14px 32px;border-radius:13px;font-weight:800;font-size:15px;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:10px;transition:.25s}
+  .btn-retry:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(224,43,71,.4)}
+  .btn-retry svg{width:17px;height:17px}
+
+  /* ============ FOOTER ============ */
+  footer{background:var(--navy-2);color:#aab4cf;padding:64px 0 0;margin-top:0}
+  .foot-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:44px;padding-bottom:44px}
+  .foot-brand{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+  .foot-brand .brand-logo{width:42px;height:42px}
+  .foot-brand b{color:#fff;font-size:16px;display:block;line-height:1.3}
+  .foot-brand span{font-size:12px;font-weight:600;color:#8a93a8}
+  .foot-desc{font-size:14px;line-height:1.8;max-width:340px}
+  footer h4{color:#fff;font-size:14px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:18px}
+  .foot-links li{margin-bottom:11px}
+  .foot-links a{font-size:14.5px;font-weight:600;color:#aab4cf;transition:.2s;display:inline-flex;align-items:center;gap:8px}
+  .foot-links a::before{content:"›";color:var(--red);font-weight:800}
+  .foot-links a:hover{color:#fff;transform:translateX(3px)}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,.1);padding:22px 0;text-align:center;font-size:13px;color:#7f8aa5}
+  .foot-bottom b{color:#ffd98a}
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width:1020px){
+    .hero-grid{grid-template-columns:1fr;gap:56px}
+    .hero-visual{max-width:460px;margin-inline:auto;width:100%}
+    .grid-4{grid-template-columns:repeat(2,1fr)}
+    .stats{grid-template-columns:repeat(2,1fr)}
+    .foot-grid{grid-template-columns:1fr 1fr}
+  }
+  @media (max-width:860px){
+    .grid-3,.dim-cards{grid-template-columns:1fr}
+    .panel.active{grid-template-columns:1fr}
+    .def-box{padding:36px 30px 36px 30px;margin-top:56px}
+    .def-box .q-ic{top:-26px;left:30px}
+  }
+  @media (max-width:760px){
+    .nav-toggle{display:flex}
+    .nav-menu{
+      position:fixed;top:72px;left:0;right:0;background:#fff;flex-direction:column;align-items:stretch;
+      padding:18px;gap:6px;border-bottom:1px solid var(--line);box-shadow:0 24px 40px rgba(16,28,56,.12);
+      transform:translateY(-140%);transition:.35s;z-index:99;
+    }
+    .nav-menu.open{transform:none}
+    .nav-menu a{text-align:center;padding:13px}
+    .hero{padding:120px 0 90px}
+    .section{padding:78px 0}
+    .quiz-card{padding:30px 24px}
+    .hero-visual{height:400px;transform:scale(.86)}
+    .hero-stats li:not(:last-child){border-right:none;padding-right:0}
+    .hero-stats{gap:20px}
+  }
+  @media (max-width:560px){
+    .grid-4{grid-template-columns:1fr}
+    .stats{grid-template-columns:1fr 1fr;gap:14px}
+    .foot-grid{grid-template-columns:1fr}
+    .fcard{width:150px;padding:13px 14px}
+    .core{width:150px;height:150px}
+    .balance{padding:26px 24px}
+    .scale-wrap{padding:26px 20px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation:none!important;transition:none!important}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#utama">Langsung ke konten utama</a>
+
+<!-- ================= NAVBAR ================= -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#utama" class="brand" aria-label="Beranda Kecerdasan Bangsa dan Negara">
+      <span class="brand-logo" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 4.8L20 8l-4 3.9.9 5.6L12 14.9 7.1 17.5 8 11.9 4 8l5.6-1.2z"/></svg>
+      </span>
+      <span class="brand-text">Materi PPKn<b>Kecerdasan Bangsa &amp; Negara</b></span>
+    </a>
+    <button id="navToggle" class="nav-toggle" aria-label="Buka menu navigasi" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul id="navMenu" class="nav-menu">
+      <li><a href="#pengertian">Pengertian</a></li>
+      <li><a href="#bentuk">Bentuk Kecerdasan</a></li>
+      <li><a href="#perilaku">Wujud Perilaku</a></li>
+      <li><a href="#indikator">Indikator</a></li>
+      <li><a href="#kuis" class="btn-nav">Uji Pemahaman</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero" id="utama">
+  <div class="hero-blob b1"></div>
+  <div class="hero-blob b2"></div>
+  <div class="container hero-grid">
+    <div class="hero-copy reveal in">
+      <span class="badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        Pendidikan Pancasila &amp; Kewarganegaraan
+      </span>
+      <h1>Kecerdasan <span class="grad">Bangsa</span> dan <span class="grad2">Negara</span></h1>
+      <p class="lead">Perpaduan kecerdasan intelektual, emosional, dan spiritual yang seimbang — fondasi terbentuknya sumber daya manusia unggul berkarakter Pancasila menuju <b>Indonesia Emas 2045</b>.</p>
+      <div class="hero-cta">
+        <a href="#pengertian" class="btn btn-primary">Mulai Belajar
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#kuis" class="btn btn-ghost">Uji Pemahaman</a>
+      </div>
+      <ul class="hero-stats">
+        <li><b>4</b><span>Bentuk kecerdasan utama</span></li>
+        <li><b>75,02</b><span>IPM Indonesia · BPS 2024</span></li>
+        <li><b>20<em>45</em></b><span>Target Indonesia Emas</span></li>
+      </ul>
+    </div>
+    <div class="hero-visual reveal in d1" aria-hidden="true">
+      <div class="core"><div><b>Pancasila</b><span>FONDASI NILAI</span></div></div>
+      <div class="fcard fc-iq">
+        <span class="fc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4"/><path d="M12 2a7 7 0 0 0-4.9 11.9c.9.9 1.4 1.9 1.6 3.1h6.6c.2-1.2.7-2.2 1.6-3.1A7 7 0 0 0 12 2z"/></svg></span>
+        <div><b>IQ</b><span>Intelektual</span></div>
+      </div>
+      <div class="fcard fc-eq">
+        <span class="fc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21.2l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg></span>
+        <div><b>EQ</b><span>Emosional</span></div>
+      </div>
+      <div class="fcard fc-sq">
+        <span class="fc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.1a2 2 0 0 0 1.2 1.2L20.2 11l-5.1 1.7a2 2 0 0 0-1.2 1.2L12 19l-1.9-5.1a2 2 0 0 0-1.2-1.2L3.8 11l5.1-1.7a2 2 0 0 0 1.2-1.2z"/><path d="M19 3v4M21 5h-4"/></svg></span>
+        <div><b>SQ</b><span>Spiritual</span></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- ========== 1. PENGERTIAN ========== -->
+<section id="pengertian" class="section">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="kicker">01 · Pengertian</span>
+      <h2>Apa Itu Kecerdasan Bangsa dan Negara?</h2>
+      <p class="sec-sub">Kecerdasan bukan hanya soal nilai di kelas. Dalam kehidupan bermasyarakat, berbangsa, dan bernegara, kecerdasan adalah kemampuan utuh yang menentukan maju atau tidaknya suatu bangsa.</p>
+    </div>
+
+    <div class="def-box reveal">
+      <span class="q-ic" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 0-4.9 11.9c.9.9 1.4 1.9 1.6 3.1h6.6c.2-1.2.7-2.2 1.6-3.1A7 7 0 0 0 12 2z"/><path d="M9 21h6M10 18h4"/></svg>
+      </span>
+      <p><b>Kecerdasan bangsa dan negara</b> adalah kemampuan suatu bangsa untuk mengembangkan seluruh potensi sumber daya manusianya — daya pikir, daya rasa, dan daya ruh — secara seimbang, sehingga mampu menghadapi tantangan zaman, menguasai ilmu pengetahuan dan teknologi, serta mewujudkan tujuan nasional sebagaimana dicita-citakan dalam Pembukaan UUD 1945.</p>
+    </div>
+
+    <div class="grid-3">
+      <article class="card reveal">
+        <span class="chip-ic ic-blue" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        </span>
+        <h3>Makna</h3>
+        <p>Bangsa yang cerdas adalah bangsa yang mampu mengelola kekayaan alam, sumber daya, dan potensi manusianya secara bijaksana. Kecerdasan menjadi modal utama pembangunan, sebab kemajuan suatu negara ditentukan oleh kualitas manusianya, bukan semata-mata kekayaan alamnya.</p>
+      </article>
+      <article class="card reveal d1">
+        <span class="chip-ic ic-red" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+        </span>
+        <h3>Tujuan</h3>
+        <p>Mencetak sumber daya manusia yang berkualitas dan berdaya saing di era global, mendorong lahirnya inovasi ilmu pengetahuan dan teknologi (IPTEK), serta mewujudkan masyarakat yang adil, makmur, berakhlak mulia, dan bertanggung jawab atas keutuhan NKRI.</p>
+      </article>
+      <article class="card reveal d2">
+        <span class="chip-ic ic-teal" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 22h18"/><path d="M6 18v-7M10 18v-7M14 18v-7M18 18v-7"/><path d="M12 2l9 5H3z"/></svg>
+        </span>
+        <h3>Landasan</h3>
+        <p>Nilai-nilai Pancasila dan Pembukaan UUD 1945 alinea keempat, Pasal 31 UUD 1945 tentang hak setiap warga atas pendidikan, serta UU No. 20 Tahun 2003 tentang Sistem Pendidikan Nasional yang bertujuan mengembangkan potensi peserta didik agar beriman dan berakhlak mulia.</p>
+      </article>
+    </div>
+
+    <figure class="quote reveal">
+      <blockquote>Ing ngarsa sung tuladha, ing madya mangun karsa, tut wuri handayani.</blockquote>
+      <figcaption>— Ki Hajar Dewantara, Bapak Pendidikan Nasional</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ========== 2. BENTUK KECERDASAN ========== -->
+<section id="bentuk" class="section alt">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="kicker">02 · Bentuk Kecerdasan</span>
+      <h2>Empat Bentuk Kecerdasan dalam Perwujudan Nilai-Nilai Pancasila</h2>
+      <p class="sec-sub">Untuk mewujudkan nilai-nilai Pancasila dalam kehidupan sehari-hari, setiap warga negara perlu mengembangkan empat bentuk kecerdasan secara seimbang. Klik setiap tab untuk mempelajarinya.</p>
+    </div>
+
+    <div class="tabs reveal" role="tablist" aria-label="Pilih bentuk kecerdasan">
+      <button class="tab active" data-tab="iq" role="tab" aria-selected="true"><span class="dot"></span>IQ · Intelektual</button>
+      <button class="tab" data-tab="eq" role="tab" aria-selected="false"><span class="dot"></span>EQ · Emosional</button>
+      <button class="tab" data-tab="sq" role="tab" aria-selected="false"><span class="dot"></span>SQ · Spiritual</button>
+      <button class="tab" data-tab="pq" role="tab" aria-selected="false"><span class="dot"></span>PQ · Fisik</button>
+    </div>
+
+    <!-- IQ -->
+    <div class="panel active" data-panel="iq" role="tabpanel">
+      <div class="panel-card">
+        <div class="panel-head">
+          <span class="chip-ic ic-blue" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4"/><path d="M12 2a7 7 0 0 0-4.9 11.9c.9.9 1.4 1.9 1.6 3.1h6.6c.2-1.2.7-2.2 1.6-3.1A7 7 0 0 0 12 2z"/></svg>
+          </span>
+          <div><h3>Kecerdasan Intelektual</h3><span>INTELLIGENCE QUOTIENT (IQ)</span></div>
+        </div>
+        <p class="desc">Kemampuan seseorang untuk mengetahui, memahami, dan mengolah informasi; berpikir secara rasional, logis, dan analitis; serta menalar dan memecahkan masalah secara sistematis. Kecerdasan ini berkaitan erat dengan aktivitas akal dan kemampuan berpikir manusia.</p>
+        <div class="mini-note">Dalam kehidupan berbangsa, IQ mendorong lahirnya ilmuwan, inovator, dan teknologi — kunci kemajuan peradaban dan daya saing nasional.</div>
+      </div>
+      <div class="panel-card panel-side">
+        <h4>Wujud &amp; Ciri</h4>
+        <ul class="check-list">
+          <li><svg class="ck-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></svg>Mudah memahami pelajaran dan memiliki wawasan luas</li>
+          <li><svg class="ck-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></svg>Berpikir rasional, kritis, dan mampu menganalisis masalah</li>
+          <li><svg class="ck-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></svg>Kreatif dan inovatif dalam mencari solusi</li>
+          <li><svg class="ck-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></svg>Menguasai serta mengikuti perkembangan IPTEK</li>
+        </ul>
+        <div class="chips-wrap">
+          <h4>Contoh Perilaku</h4>
+          <div class="chipset">
+            <span class="chip">Belajar dengan giat</span>
+            <span class="chip">Gemar membaca</span>
+            <span class="chip">Aktif bertanya &amp; berdiskusi</span>
+            <span class="chip">Mengikuti olimpiade sains</span>
+            <span class="chip">Memakai teknologi secara produktif</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EQ -->
+    <div class="panel" data-panel="eq" role="tabpanel">
+      <div class="panel-card">
+        <div class="panel-head">
+          <span class="chip-ic ic-red" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21.2l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+          </span>
+          <div><h3>Kecerdasan Emosional</h3><span>EMOTIONAL QUOTIENT (EQ)</span></div>
+        </div>
+        <p class="desc">Kemampuan mengenali dan mengelola emosi diri sendiri, memahami perasaan orang lain (empati), serta membangun hubungan sosial yang harmonis. Istilah ini dipopulerkan oleh <b>Daniel Goleman</b> dengan lima aspek utamanya: kesadaran diri, pengaturan diri, motivasi, empati, dan keterampilan sosial.</p>
+        <div class="mini-note">EQ menentukan keberhasilan seseorang dalam bekerja sama — dan bangsa yang harmonis lahir dari warga yang mampu mengelola emosinya.</div>
+      </div>
+      <div class="panel-card panel-side">
+        <h4>Lima Aspek (Goleman)</h4>
+        <ul class="check-list">
+          <li><svg class="ck-red" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></svg>Kesadaran diri <em>(self-awareness)</em></li>
+          <li><svg class="ck-red" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></svg>Pengaturan diri <em>(self-regulation)</em></li>
+          <li><svg class="ck-red" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></svg>Motivasi <em>(motivation)</em></li>
+          <li><svg class="ck-red" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></svg>Empati <em>(empathy)</em></li>
+          <li><svg class="ck-red" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></svg>Keterampilan sosial <em>(social skills)</em></li>
+        </ul>
+        <div class="chips-wrap">
+          <h4>Contoh Perilaku</h4>
+          <div class="chipset">
+            <span class="chip">Tidak mudah marah</span>
+            <span class="chip">Menghargai pendapat orang lain</span>
+            <span class="chip">Bekerja sama dalam tim</span>
+            <span class="chip">Bersabar &amp; pantang menyerah</span>
+            <span class="chip">Santun dalam berkomunikasi</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SQ -->
+    <div class="panel" data-panel="sq" role="tabpanel">
+      <div class="panel-card">
+        <div class="panel-head">
+          <span class="chip-ic ic-gold" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.1a2 2 0 0 0 1.2 1.2L20.2 11l-5.1 1.7a2 2 0 0 0-1.2 1.2L12 19l-1.9-5.1a2 2 0 0 0-1.2-1.2L3.8 11l5.1-1.7a2 2 0 0 0 1.2-1.2z"/><path d="M19 3v4M21 5h-4"/></svg>
+          </span>
+          <div><h3>Kecerdasan Spiritual</h3><span>SPIRITUAL QUOTIENT (SQ)</span></div>
+        </div>
+        <p class="desc">Kemampuan untuk menjawab pertanyaan tentang makna hidup, bertingkah laku berdasarkan nilai moral dan nilai keagamaan yang luhur, serta memiliki kedalaman jiwa dan keikhlasan dalam berbuat kebaikan. SQ adalah kecerdasan yang menuntun penggunaan IQ dan EQ agar tetap berada di jalan yang benar.</p>
+        <div class="mini-note">IQ tinggi tanpa SQ akan melahirkan manusia pintar yang sombong dan korup; SQ menjadikan kecerdasan bermanfaat bagi sesama dan bangsa.</div>
+      </div>
+      <div class="panel-card panel-side">
+        <h4>Wujud &amp; Ciri</h4>
+        <ul class="check-list">
+          <li><svg class="ck-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></svg>Beriman dan bertakwa kepada Tuhan Yang Maha Esa</li>
+          <li><svg class="ck-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></svg>Jujur dalam perkataan dan perbuatan</li>
+          <li><svg class="ck-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></svg>Bertanggung jawab dan dapat dipercaya (amanah)</li>
+          <li><svg class="ck-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></svg>Rendah hati, peduli, dan berempati kepada sesama</li>
+          <li><svg class="ck-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></svg>Bersyukur dan ikhlas dalam berbuat baik</li>
+        </ul>
+        <div class="chips-wrap">
+          <h4>Contoh Perilaku</h4>
+          <div class="chipset">
+            <span class="chip">Beribadah tepat waktu</span>
+            <span class="chip">Jujur saat ulangan</span>
+            <span class="chip">Berbagi dengan sesama</span>
+            <span class="chip">Menepati janji</span>
+            <span class="chip">Menghormati orang tua</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PQ -->
+    <div class="panel" data-panel="pq" role="tabpanel">
+      <div class="panel-card">
+        <div class="panel-head">
+          <span class="chip-ic ic-violet" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </span>
+          <div><h3>Kecerdasan Fisik</h3><span>PHYSICAL QUOTIENT (PQ)</span></div>
+        </div>
+        <p class="desc">Kemampuan menjaga kebugaran, kesehatan, dan kekuatan jasmani sebagai modal utama dalam belajar, bekerja, dan beraktivitas. Tubuh yang sehat dan bugar adalah wadah bagi otak yang cerdas — tanpa kondisi fisik yang baik, kecerdasan lain sulit berkembang optimal.</p>
+        <div class="mini-note">Pola hidup bersih dan sehat (PHBS) serta gizi seimbang sejak usia dini adalah investasi kecerdasan generasi penerus bangsa.</div>
+      </div>
+      <div class="panel-card panel-side">
+        <h4>Wujud &amp; Ciri</h4>
+        <ul class="check-list">
+          <li><svg class="ck-violet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></svg>Kebugaran jasmani yang terjaga</li>
+          <li><svg class="ck-violet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></svg>Pola hidup bersih dan sehat</li>
+          <li><svg class="ck-violet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></svg>Gizi seimbang dan istirahat cukup</li>
+          <li><svg class="ck-violet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></svg>Hidup jauh dari rokok, miras, dan narkoba</li>
+        </ul>
+        <div class="chips-wrap">
+          <h4>Contoh Perilaku</h4>
+          <div class="chipset">
+            <span class="chip">Olahraga rutin</span>
+            <span class="chip">Sarapan sebelum sekolah</span>
+            <span class="chip">Tidur cukup 7–8 jam</span>
+            <span class="chip">Menjaga kebersihan diri</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="balance reveal">
+      <span class="bal-ic" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+      </span>
+      <div>
+        <h3>Keseimbangan adalah Kuncinya</h3>
+        <p>IQ, EQ, SQ, dan PQ harus berkembang seimbang. Kecerdasan tanpa akhlak melahirkan manusia pandai yang sombong; akhlak tanpa kecerdasan melahirkan manusia baik yang tertinggal. Keduanya bersatu dalam nilai-nilai Pancasila.</p>
+      </div>
+      <div class="bal-bar" aria-hidden="true">
+        <div class="bal-track"><i class="seg-iq"></i><i class="seg-eq"></i><i class="seg-sq"></i><i class="seg-pq"></i></div>
+        <div class="bal-labels"><span>IQ</span><span>EQ</span><span>SQ</span><span>PQ</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 3. WUJUD PERILAKU ========== -->
+<section id="perilaku" class="section">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="kicker">03 · Wujud Perilaku</span>
+      <h2>Perilaku Kecerdasan dalam Kehidupan Sehari-hari</h2>
+      <p class="sec-sub">Kecerdasan tidak hanya dibuktikan di ruang kelas, tetapi diperlihatkan melalui perilaku nyata di lingkungan keluarga, sekolah, masyarakat, hingga kehidupan berbangsa dan bernegara.</p>
+    </div>
+    <div class="grid-4">
+      <article class="place-card reveal">
+        <div class="place-top pt-blue">
+          <span class="chip-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5L12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M9.5 21v-6h5v6"/></svg></span>
+          <h3>Di Rumah</h3>
+        </div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></svg>Belajar secara mandiri dan disiplin</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></svg>Membantu orang tua dengan ikhlas</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></svg>Mengatur waktu belajar, bermain, dan istirahat</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></svg>Mendengarkan nasihat orang tua</li>
+        </ul>
+      </article>
+      <article class="place-card reveal d1">
+        <div class="place-top pt-red">
+          <span class="chip-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span>
+          <h3>Di Sekolah</h3>
+        </div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></svg>Aktif bertanya dan berdiskusi di kelas</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></svg>Jujur saat mengerjakan ulangan</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></svg>Bekerja sama dalam kerja kelompok</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></svg>Menghormati guru dan sesama teman</li>
+        </ul>
+      </article>
+      <article class="place-card reveal d2">
+        <div class="place-top pt-teal">
+          <span class="chip-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.9"/><path d="M16 3.1a4 4 0 0 1 0 7.8"/></svg></span>
+          <h3>Di Masyarakat</h3>
+        </div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></svg>Bergotong royong membersihkan lingkungan</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></svg>Toleran terhadap perbedaan suku dan agama</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></svg>Santun dalam berbicara dengan tetangga</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></svg>Aktif dalam kegiatan sosial dan karang taruna</li>
+        </ul>
+      </article>
+      <article class="place-card reveal d3">
+        <div class="place-top pt-gold">
+          <span class="chip-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><path d="M4 22v-7"/></svg></span>
+          <h3>Berbangsa &amp; Bernegara</h3>
+        </div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></svg>Taat terhadap hukum dan peraturan</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></svg>Mengikuti upacara bendera dengan khidmat</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></svg>Menjaga persatuan dalam kebhinekaan</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></svg>Bangga menggunakan produk dalam negeri</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 4. INDIKATOR ========== -->
+<section id="indikator" class="section alt">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="kicker">04 · Indikator</span>
+      <h2>Indikator Bangsa yang Cerdas</h2>
+      <p class="sec-sub">Seberapa cerdas sebuah bangsa diukur melalui <b>Indeks Pembangunan Manusia (IPM)</b> yang dirilis Badan Pusat Statistik (BPS). IPM dibentuk oleh tiga dimensi dasar kualitas manusia.</p>
+    </div>
+
+    <div class="dim-cards">
+      <article class="dim-card reveal">
+        <span class="chip-ic ic-red" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21.2l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.8z"/><path d="M3 12h4l2-4 3 8 2-4h7" transform="translate(0 -1) scale(.9)"/></svg></span>
+        <h3>Umur Panjang &amp; Hidup Sehat</h3>
+        <p>Diukur melalui <b>Umur Harapan Hidup (UHH)</b> saat lahir — gambaran rata-rata usia yang diharapkan dapat dicapai bayi yang baru lahir.</p>
+        <span class="dim-tag tag-red">Dimensi Kesehatan</span>
+      </article>
+      <article class="dim-card reveal d1">
+        <span class="chip-ic ic-blue" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span>
+        <h3>Pengetahuan</h3>
+        <p>Diukur melalui <b>Harapan Lama Sekolah (HLS)</b> — berapa lama anak usia 7 tahun diharapkan menempuh pendidikan — dan <b>Rata-rata Lama Sekolah (RLS)</b> penduduk usia 25 tahun ke atas.</p>
+        <span class="dim-tag tag-blue">Dimensi Pendidikan</span>
+      </article>
+      <article class="dim-card reveal d2">
+        <span class="chip-ic ic-gold" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="14" rx="3"/><path d="M2 10h20M16 15h2"/></svg></span>
+        <h3>Standar Hidup Layak</h3>
+        <p>Diukur melalui <b>pengeluaran riil per kapita per tahun</b> — kemampuan masyarakat memenuhi kebutuhan hidup yang layak dan bermutu.</p>
+        <span class="dim-tag tag-gold">Dimensi Ekonomi</span>
+      </article>
+    </div>
+
+    <div class="stats reveal" id="statRow">
+      <div class="stat" style="--sc:#e02b47"><b><span class="num" data-target="75.02" data-dec="2">0</span></b><span class="u">poin</span><span>IPM Indonesia</span></div>
+      <div class="stat" style="--sc:#3b6fe0"><b><span class="num" data-target="74.15" data-dec="2">0</span></b><span class="u">tahun</span><span>Umur Harapan Hidup</span></div>
+      <div class="stat" style="--sc:#f5a524"><b><span class="num" data-target="13.21" data-dec="2">0</span></b><span class="u">tahun</span><span>Harapan Lama Sekolah</span></div>
+      <div class="stat" style="--sc:#0ea5a4"><b><span class="num" data-target="8.85" data-dec="2">0</span></b><span class="u">tahun</span><span>Rata-rata Lama Sekolah</span></div>
+    </div>
+    <p class="stat-note">Capaian IPM Indonesia tahun 2024 · Sumber: Badan Pusat Statistik (BPS)</p>
+
+    <div class="scale-wrap reveal">
+      <div class="scale-head">
+        <h3>Kategori IPM Nasional</h3>
+        <span>IPM Indonesia berada pada kategori <b>Tinggi</b></span>
+      </div>
+      <div class="scale" aria-hidden="true">
+        <span class="marker"></span>
+        <span class="marker-tip">Indonesia 75,02</span>
+      </div>
+      <div class="scale-labels"><span>Rendah &lt; 60</span><span>Sedang 60–70</span><span>Tinggi 70–80</span><span>Sangat Tinggi ≥ 80</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 5. KUIS ========== -->
+<section id="kuis" class="section">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="kicker">05 · Evaluasi</span>
+      <h2>Kuis: Seberapa Cerdas Pemahamanmu?</h2>
+      <p class="sec-sub">Uji pemahamanmu tentang materi kecerdasan bangsa dan negara melalui lima pertanyaan berikut. Setiap jawaban akan langsung diberi pembahasan.</p>
+    </div>
+    <div class="quiz-card reveal" id="quizApp" aria-live="polite">
+      <!-- dirender oleh JavaScript -->
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <span class="brand-logo" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 4.8L20 8l-4 3.9.9 5.6L12 14.9 7.1 17.5 8 11.9 4 8l5.6-1.2z"/></svg>
+          </span>
+          <div><b>Kecerdasan Bangsa &amp; Negara</b><span>Materi Pendidikan Pancasila &amp; Kewarganegaraan</span></div>
+        </div>
+        <p class="foot-desc">Halaman pembelajaran interaktif tentang perwujudan nilai-nilai Pancasila melalui pengembangan kecerdasan intelektual, emosional, spiritual, dan fisik dalam kehidupan bermasyarakat, berbangsa, dan bernegara.</p>
+      </div>
+      <div>
+        <h4>Materi</h4>
+        <ul class="foot-links">
+          <li><a href="#pengertian">Pengertian</a></li>
+          <li><a href="#bentuk">Bentuk Kecerdasan</a></li>
+          <li><a href="#perilaku">Wujud Perilaku</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Evaluasi</h4>
+        <ul class="foot-links">
+          <li><a href="#indikator">Indikator Bangsa Cerdas</a></li>
+          <li><a href="#kuis">Kuis Interaktif</a></li>
+          <li><a href="#utama">Kembali ke Atas</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="foot-bottom">© <span id="year">2026</span> · Media Pembelajaran <b>Pendidikan Pancasila &amp; Kewarganegaraan</b> · Sumber data: BPS 2024</div>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+
+  /* ---------- Tahun footer ---------- */
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  /* ---------- Navbar: efek scroll ---------- */
+  var navbar = document.getElementById('navbar');
+  function onScroll(){ navbar.classList.toggle('scrolled', window.scrollY > 10); }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  /* ---------- Navbar: menu mobile ---------- */
+  var navToggle = document.getElementById('navToggle');
+  var navMenu   = document.getElementById('navMenu');
+  navToggle.addEventListener('click', function(){
+    var open = navMenu.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  navMenu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      navMenu.classList.remove('open');
+      navToggle.setAttribute('aria-expanded','false');
+    });
+  });
+
+  /* ---------- Reveal saat scroll ---------- */
+  var revealIO = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('in'); revealIO.unobserve(e.target); }
+    });
+  }, {threshold:.12, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){ revealIO.observe(el); });
+
+  /* ---------- Scrollspy: tandai menu aktif ---------- */
+  var navLinks = Array.prototype.slice.call(navMenu.querySelectorAll('a[href^="#"]'));
+  var spyIO = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        navLinks.forEach(function(a){
+          a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id);
+        });
+      }
+    });
+  }, {rootMargin:'-45% 0px -50% 0px'});
+  ['pengertian','bentuk','perilaku','indikator','kuis'].forEach(function(id){
+    var el = document.getElementById(id);
+    if(el) spyIO.observe(el);
+  });
+
+  /* ---------- Tab bentuk kecerdasan ---------- */
+  var tabs   = document.querySelectorAll('.tab');
+  var panels = document.querySelectorAll('.panel');
+  tabs.forEach(function(t){
+    t.addEventListener('click', function(){
+      tabs.forEach(function(x){ x.classList.remove('active'); x.setAttribute('aria-selected','false'); });
+      t.classList.add('active'); t.setAttribute('aria-selected','true');
+      panels.forEach(function(p){ p.classList.toggle('active', p.dataset.panel === t.dataset.tab); });
+    });
+  });
+
+  /* ---------- Counter angka (format Indonesia) ---------- */
+  function formatID(v, dec){
+    return v.toFixed(dec).replace('.', ',');
+  }
+  function animateNum(el){
+    var target = parseFloat(el.dataset.target);
+    var dec    = parseInt(el.dataset.dec || '0', 10);
+    var dur    = 1600, t0 = null;
+    function step(ts){
+      if(!t0) t0 = ts;
+      var p = Math.min((ts - t0) / dur, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = formatID(target * eased, dec);
+      if(p < 1) requestAnimationFrame(step);
+      else el.textContent = formatID(target, dec);
+    }
+    requestAnimationFrame(step);
+  }
+  var statRow = document.getElementById('statRow');
+  if(statRow){
+    var statIO = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          statRow.querySelectorAll('.num').forEach(animateNum);
+          statIO.unobserve(e.target);
+        }
+      });
+    }, {threshold:.35});
+    statIO.observe(statRow);
+  }
+
+  /* ---------- KUIS INTERAKTIF ---------- */
+  var QUIZ = [
+    {
+      q: 'Kemampuan mengenali dan mengelola emosi diri sendiri, memahami perasaan orang lain, serta membangun hubungan sosial yang baik disebut ...',
+      opts: ['Kecerdasan intelektual (IQ)', 'Kecerdasan emosional (EQ)', 'Kecerdasan spiritual (SQ)', 'Kecerdasan fisik (PQ)'],
+      a: 1,
+      why: 'EQ (Emotional Quotient) adalah kemampuan mengenali, mengelola emosi diri, dan berempati kepada orang lain — lima aspeknya dikemukakan oleh Daniel Goleman.'
+    },
+    {
+      q: 'Beriman dan bertakwa kepada Tuhan Yang Maha Esa, jujur, serta bertanggung jawab merupakan wujud dari ...',
+      opts: ['Kecerdasan emosional', 'Kecerdasan spiritual', 'Kecerdasan intelektual', 'Kecerdasan fisik'],
+      a: 1,
+      why: 'SQ (Spiritual Quotient) adalah kemampuan bertingkah laku berdasarkan nilai moral dan keagamaan yang luhur, seperti iman, jujur, dan amanah.'
+    },
+    {
+      q: 'Berpikir rasional, logis, analitis, serta mudah memahami dan mengolah informasi adalah ciri dari ...',
+      opts: ['Kecerdasan spiritual', 'Kecerdasan emosional', 'Kecerdasan intelektual', 'Kecerdasan fisik'],
+      a: 2,
+      why: 'IQ (Intelligence Quotient) berkaitan dengan kemampuan akal: berpikir, menalar, menganalisis, dan memecahkan masalah secara sistematis.'
+    },
+    {
+      q: 'Kesadaran diri, pengaturan diri, motivasi, empati, dan keterampilan sosial merupakan lima aspek kecerdasan emosional yang dikemukakan oleh ...',
+      opts: ['Ki Hajar Dewantara', 'Daniel Goleman', 'B.J. Habibie', 'Ir. Soekarno'],
+      a: 1,
+      why: 'Daniel Goleman mempopulerkan konsep EQ dengan lima aspek: self-awareness, self-regulation, motivation, empathy, dan social skills.'
+    },
+    {
+      q: 'Berikut ini yang BUKAN komponen pembentuk Indeks Pembangunan Manusia (IPM) menurut BPS adalah ...',
+      opts: ['Umur harapan hidup saat lahir', 'Harapan dan rata-rata lama sekolah', 'Pengeluaran riil per kapita per tahun', 'Kekayaan sumber daya alam'],
+      a: 3,
+      why: 'IPM hanya menggunakan tiga dimensi: kesehatan (UHH), pengetahuan (HLS & RLS), dan standar hidup layak (pengeluaran per kapita). Kekayaan alam bukan komponennya.'
+    }
+  ];
+
+  var app    = document.getElementById('quizApp');
+  var idx    = 0;
+  var score  = 0;
+  var answered = false;
+  var KEYS   = ['A','B','C','D'];
+
+  function esc(s){
+    return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  }
+
+  function renderQuestion(){
+    answered = false;
+    var item = QUIZ[idx];
+    var pct  = Math.round((idx / QUIZ.length) * 100);
+    var html =
+      '<div class="q-meta">' +
+        '<span class="q-count">Pertanyaan ' + (idx+1) + ' dari ' + QUIZ.length + '</span>' +
+        '<span class="q-score">Skor: ' + score + '</span>' +
+      '</div>' +
+      '<div class="q-progress"><i style="width:' + pct + '%"></i></div>' +
+      '<h3 class="q-text">' + esc(item.q) + '</h3>' +
+      '<div class="opts">';
+    item.opts.forEach(function(o, i){
+      html += '<button class="opt" data-i="' + i + '"><span class="key">' + KEYS[i] + '</span><span>' + esc(o) + '</span></button>';
+    });
+    html += '</div>' +
+      '<div class="why-box" id="whyBox"></div>' +
+      '<div class="q-actions"><button class="btn-next" id="btnNext">' +
+        (idx === QUIZ.length - 1 ? 'Lihat Hasil' : 'Pertanyaan Berikutnya') +
+        ' <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>' +
+      '</button></div>';
+    app.innerHTML = html;
+
+    app.querySelectorAll('.opt').forEach(function(btn){
+      btn.addEventListener('click', function(){ answer(parseInt(btn.dataset.i, 10), btn); });
+    });
+    document.getElementById('btnNext').addEventListener('click', function(){
+      idx++;
+      if(idx < QUIZ.length) renderQuestion();
+      else renderResult();
+    });
+  }
+
+  function answer(i, btn){
+    if(answered) return;
+    answered = true;
+    var item = QUIZ[idx];
+    var opts = app.querySelectorAll('.opt');
+    opts.forEach(function(b){ b.disabled = true; });
+    opts[item.a].classList.add('correct');
+    if(i === item.a){
+      score++;
+    } else {
+      btn.classList.add('wrong');
+    }
+    var why = document.getElementById('whyBox');
+    why.innerHTML = (i === item.a
+      ? '<b>Benar!</b> '
+      : '<b>Belum tepat.</b> Jawaban yang benar: <b>' + esc(item.opts[item.a]) + '</b>. ')
+      + esc(item.why);
+    why.classList.add('show');
+    app.querySelector('.q-score').textContent = 'Skor: ' + score;
+    document.getElementById('btnNext').classList.add('show');
+    var pct = Math.round(((idx + 1) / QUIZ.length) * 100);
+    app.querySelector('.q-progress i').style.width = pct + '%';
+  }
+
+  function renderResult(){
+    var total = QUIZ.length;
+    var msg, title;
+    if(score === total){ title = 'Luar Biasa, Sempurna!'; msg = 'Kamu menguasai materi kecerdasan bangsa dan negara dengan sangat baik. Pertahankan semangat belajarmu dan jadilah generasi cerdas untuk Indonesia Emas 2045!'; }
+    else if(score >= total - 1){ title = 'Hebat!'; msg = 'Pemahamanmu sudah sangat baik. Pelajari kembali bagian yang terlewat agar semakin sempurna.'; }
+    else if(score >= 3){ title = 'Bagus!'; msg = 'Dasar pemahamanmu sudah terbentuk. Baca ulang materi pada tab IQ, EQ, SQ, dan PQ lalu coba lagi.'; }
+    else { title = 'Semangat!'; msg = 'Jangan menyerah. Pelajari kembali materinya dengan tenang, lalu ulangi kuis ini sampai paham.'; }
+    var deg = Math.round((score / total) * 360);
+    app.innerHTML =
+      '<div class="result show">' +
+        '<div class="score-ring" style="background:conic-gradient(#10b981 0deg ' + deg + 'deg, #edf0f7 ' + deg + 'deg 360deg)"><b>' + score + '<small>/' + total + '</small></b></div>' +
+        '<h3>' + title + '</h3>' +
+        '<p>' + msg + '</p>' +
+        '<button class="btn-retry" id="btnRetry">' +
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg>' +
+          ' Ulangi Kuis' +
+        '</button>' +
+      '</div>';
+    document.getElementById('btnRetry').addEventListener('click', function(){
+      idx = 0; score = 0;
+      renderQuestion();
+    });
+  }
+
+  renderQuestion();
+})();
+</script>
+</body>
+</html>
